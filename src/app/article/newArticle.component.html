@@ -1,0 +1,30 @@
+<div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div>Say something...</div>
+            <textarea class="newPostBody" cols="80" rows="4" placeholder="share what's new..." [(ngModel)]="message"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-5">
+            Add a picture
+            <input type="file" id="articleImage" accept="image/*" (change)="handleImageChange($event)" />
+        </div>
+        <div class="col-sm-2" *ngIf="file || message">
+            <div class="text-right">
+                <button class="btn btn-primary" [disabled]="disabled" (click)="addNewArticle()">
+                    Publish it
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="file">
+        <img class="postImage" src={{preview}}/>
+        <div>
+            {{ file.webkitRelativePath || file.name }}
+            <br/> ({{ fileSize }} kB)
+        </div>
+    </div>
+</div>

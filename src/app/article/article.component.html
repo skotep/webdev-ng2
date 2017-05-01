@@ -1,0 +1,56 @@
+<div class="row" name="article">
+    <div class="col-sm-11">
+        <h3>
+            <img class="followingImage" src="{{ avatar }}" /> {{ article.author }} said on {{ date.format('MM-DD-YYYY')}}
+            at {{ date.format('HH:mm:ss')}}
+        </h3>
+
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="media-left">
+                    <img class="postImage" src="{{ article.img }}" />
+                </div>
+                <div contentEditable="{{ username == article.author }}" class="media-body" (blur)="checkDisabled($event)" title="{{username == article.author ? 'click to edit' : ''}}">
+                    {{ text }}
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-group btn-group-justified">
+            <div class="btn-group">
+                <label class="btn btn-warning" (click)="hideComments = !hideComments">
+                    {{ hideComments ? 'Show' : 'Hide' }} Comments ({{ article.comments.length }})
+                </label>
+            </div>
+
+            <div class="btn-group">
+                <label class="btn btn-success" (click)="addComment = !addComment">
+                    {{ addComment ? 'Cancel' : 'Add a comment' }}
+                </label>
+            </div>
+
+            <div *ngIf="article.author == username" class="btn-group">
+                <button class="btn btn-primary" title="Click the text to edit your post" [disabled]="disabled" (click)="editArticle()">
+                    Edit post
+                </button>
+            </div>
+        </div>
+
+        <div class="btn-group btn-group-justified">
+            <div class="btn-group"></div>
+            <div *ngIf="addComment" class="btn-group">
+                <div>
+                    <textarea class="newPostText" cols="80" rows="4" placeholder="your comment" [(ngModel)]="newComment"></textarea>
+                    <button class="btn btn-success" [disabled]="!newComment.length" (click)="addNewComment()">
+                    Make the comment
+                    </button>
+                </div>
+            </div>
+            <div class="btn-group"></div>
+        </div>
+
+        <div *ngIf="!hideComments">
+            <Comment *ngFor="let c of article.comments" [comment]="c" [edit]="editComment()"></Comment>
+        </div>
+    </div>
+</div>

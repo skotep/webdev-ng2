@@ -1,0 +1,22 @@
+<div class="col-xs-5 col-md-5">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="row">
+            <img width="100%" src={{avatar}}/>
+        </div>
+        <div class="row">
+            <em>Upload new profile avatar</em>
+            <input type="file" accept="image/*" (change)="handleImageChange($event)" />
+        </div>
+        <div *ngIf="file">
+            <div class="row">
+                <img width="100%" src={{preview}}/>
+            </div>
+            <div *ngIf="file.webkitRelativePath || file.name">
+                ({{ fileSize }} kB)
+            </div>
+            <input class="btn btn-primary" type="button" value="Upload" (click)="uploadImage()" />
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div>

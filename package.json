@@ -1,0 +1,42 @@
+{
+  "name": "angular-frontend",
+  "version": "1.0.0",
+  "author": "Scott E Pollack <skotep@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "webpack-dev-server --color --open --inline",
+    "build": "webpack -p --progress && cp src/*.css src/*.html dist/",
+    "deploy": "npm run build && surge -p dist -d ricebook-ng2.surge.sh",
+    "serve": "serve dist"
+  },
+  "repository": {},
+  "devDependencies": {
+    "@types/node": "^7.0.14",
+    "angular2-template-loader": "^0.6.2",
+    "moment": "^2.18.1",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.6.1",
+    "serve": "^5.1.4",
+    "source-map-loader": "^0.2.1",
+    "surge": "^0.19.0",
+    "ts-loader": "^2.0.3",
+    "typescript": "^2.3.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "@angular/common": "^4.1.0",
+    "@angular/compiler": "^4.1.0",
+    "@angular/core": "^4.1.0",
+    "@angular/forms": "^4.1.0",
+    "@angular/http": "^4.1.0",
+    "@angular/platform-browser": "^4.1.0",
+    "@angular/platform-browser-dynamic": "^4.1.0",
+    "@angular/router": "^4.1.0",
+    "angular-in-memory-web-api": "^0.3.1",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.3.0",
+    "zone.js": "^0.8.9"
+  }
+}

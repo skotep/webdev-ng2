@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-8">
+        <h4>
+            <img class="followingImage" src="{{ avatar }}" /> {{ comment.author }} commented on {{date.format('MM-DD-YYYY')}}
+            at {{date.format('HH:mm:ss')}}
+        </h4>
+        <div contentEditable="{{ username == comment.author }}" class="media-body" (blur)="checkDisabled($event)" title="{{username == comment.author ? 'click to edit' : ''}}">
+            {{ text }}
+        </div>
+        <div *ngIf="comment.author == username" class="media-right">
+            <button class="btn btn-primary" title="Click the text to edit your comment" [disabled]="disabled" (click)="editComment()">
+                Update comment
+            </button>
+        </div>
+    </div>
+</div>

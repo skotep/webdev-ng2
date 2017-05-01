@@ -1,0 +1,10 @@
+<div class="col-sm-9">
+    <NewArticle></NewArticle>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-sm-7">
+            <input class="form-control" type="text" placeholder="search your feed" [(ngModel)]="keyword" />
+        </div>
+    </div>
+    <Article *ngFor="let a of articles | filter: keyword" [article]="a" avatar={{avatars[a.author]}}></Article>
+</div>

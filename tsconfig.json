@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    // Let us use even fancier Angular decorators, e.g. @Injectable.
+    "emitDecoratorMetadata": true,
+    // Let us use fancy Angular decorators, e.g. @Component.
+    "experimentalDecorators": true,
+    // Declare that our global scope includes objects from ES2015 and the DOM.
+    "lib": ["es2015", "dom"],
+    // Generate a CommonJS module for Webpack.
+    "module": "commonjs",
+    // Resolve dependencies like Node.js.
+    "moduleResolution": "node",
+    // Raise errors for untyped expressions or declarations.
+    "noImplicitAny": true,
+    // Attach inline source maps.
+    "sourceMap": true,
+    // Suppress noImplicitAny errors when indexing.
+    "suppressImplicitAnyIndexErrors": true,
+    // Generate ES5.
+    "target": "es5"
+  }
+}

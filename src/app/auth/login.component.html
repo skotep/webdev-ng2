@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-9">
+
+        <div class="form-inline">
+            <label class="col-sm-3 form-control-label" htmlFor="loginUsername">username</label>
+            <input class="form-control" id="loginUsername" type="text" 
+                [(ngModel)]="username" placeholder="username" />
+        </div>
+        <div class="form-inline">
+            <label class="col-sm-3 form-control-label" htmlFor="loginPassword">password</label>
+            <input class="form-control" id="loginPassword" type="password" 
+                [(ngModel)]="password" placeholder="password" />
+        </div>
+        <div class="form-inline">&nbsp;</div>
+        <div class="form-inline">
+            <span class="col-sm-3 form-control-label"></span>
+            <input class="btn btn-primary" type="button" value="Log In"
+                (click)="loginLocal(username, password)" />
+
+            <span class="btn btn-danger" (click)="loginGoogle()" >
+                <span class="fa fa-google-plus"></span> Google+
+            </span>
+
+            <span class="btn btn-primary" (click)="loginFacebook()" >
+                <span class="fa fa-facebook"></span> Facebook
+            </span>
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>

@@ -1,0 +1,35 @@
+<div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="text-center">
+                <h4 id="username">{{ username }}</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <img width="100%" src="{{avatar}}" />
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="text-center">
+                <h4 id="headline">{{ headline }}</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <input class="form-control" id="headline" type="text" placeholder="update your headline" [(ngModel)]="newHeadline" />
+        </div>
+
+        <div class="col-sm-12" *ngIf="newHeadline">
+            <input class="btn btn-primary" type="button" value="Update your Headline" (click)="updateHeadline()" />
+        </div>
+    </div>
+</div>

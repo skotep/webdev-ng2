@@ -1,0 +1,15 @@
+<div>
+    <div class="col-sm-2">&nbsp;</div>
+    <div class="col-sm-8">
+        <Follower *ngFor="let fol of followers" name="{{fol.name}}" avatar="{{fol.avatar}}" headline="{{fol.headline}}"
+            [delete]="deleteFollower(fol.name)">
+        </Follower>
+        <div class="row">&nbsp;</div>
+        <div class="row">
+            <input class="form-control" type="text" placeholder="add a follower" [(ngModel)]="newFollower" />
+            <input *ngIf="newFollower" class="btn btn-primary" type="button" (click)="addFollower()" value="add follower" />
+            <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+        </div>
+    </div>
+    <div class="col-sm-2">&nbsp;</div>
+</div>

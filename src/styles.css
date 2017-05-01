@@ -1,0 +1,22 @@
+.postImage {
+    max-width: 150px;
+    max-height: 150px;
+    float: left;
+    padding: 0.1em;
+    margin: 0.5em;    
+}
+
+.newPostBody {
+    border: 1pt solid gray;
+    max-width: 60%;
+    min-width: 250px;
+}
+
+.followingImage {
+     width: 48px;
+     max-width: 48px;
+}
+
+span[contenteditable='true']:hover {
+    background: #e6e6e6;
+}
