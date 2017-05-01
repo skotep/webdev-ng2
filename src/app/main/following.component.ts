@@ -71,8 +71,10 @@ export class FollowingComponent {
                     this.srv.getArticles()
                 })
             })
-            .catch((err: any) =>
-                srv.setError(`There was an error getting your list of followed users ${err}`)
-            )
+            .catch((err: any) => {
+                if (err.indexOf(401) < 0) {
+                    srv.setError(`There was an error getting your list of followed users ${err}`)
+                }
+            })
     }
 }
